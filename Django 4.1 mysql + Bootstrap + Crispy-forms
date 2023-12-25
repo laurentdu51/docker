@@ -2,11 +2,8 @@
 # Django 4.1 mysql + Bootstrap + Crispy-forms > duhaz_p3d413:latest
 
 FROM python:3.12-rc-alpine
-
 VOLUME /mnt/projet
-
 WORKDIR /mnt/projet/
-
 RUN sed -i 's/https/http/' /etc/apk/repositories
 RUN apk add tzdata build-base py-pip libffi-dev openssl-dev cargo
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
