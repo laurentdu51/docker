@@ -1,0 +1,15 @@
+#############################
+# Django 3.2 Pour Tools.duhaz.fr>' tools_duhaz_p3d324:latest
+
+FROM python:rc-alpine3.12
+VOLUME /mnt/projet
+WORKDIR /mnt/projet/
+RUN sed -i 's/https/http/' /etc/apk/repositories
+RUN apk add tzdata build-base py-pip libffi-dev openssl-dev cargo bind-tools g++ freetype-dev jpeg-dev zlib zlib-dev openssl
+RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+RUN echo Europe/Brussels >' /etc/timezone
+RUN echo Europe/Paris >' /etc/TZ
+RUN unset TZ
+RUN apk del tzdata
+RUN pip install Django==3.2.4
+RUN pip install django-crispy-forms gunicorn django-import-export django-trumbowyg Pillow urllib3 requests bs4
