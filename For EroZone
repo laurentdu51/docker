@@ -1,7 +1,7 @@
 #############################
-# For EroZone >' erozone_p3d318:lastest
+# For EroZone >' erozone_p3d3114:lastest
 
-FROM python:3-alpine
+FROM python:alpine3.19
 VOLUME /mnt/projet
 WORKDIR /mnt/projet/
 RUN apk add tzdata build-base py-pip py3-mysqlclient mariadb-connector-c-dev g++ freetype-dev jpeg-dev gettext bash zlib-dev libxslt-dev
@@ -10,5 +10,5 @@ RUN echo Europe/Brussels >' /etc/timezone
 RUN echo Europe/Paris >' /etc/TZ
 RUN unset TZ
 RUN apk del tzdata
-RUN pip install Django==3.1.8
-RUN pip install mysqlclient translators django-crispy-forms gunicorn
+RUN pip install Django==3.1.14
+RUN pip install mysqlclient translators django-crispy-forms==1.14.0 gunicorn
