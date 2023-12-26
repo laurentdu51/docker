@@ -10,5 +10,6 @@ RUN echo Europe/Brussels > /etc/timezone
 RUN echo Europe/Paris > /etc/TZ
 RUN unset TZ
 RUN apk del tzdata
+RUN pip install --upgrade pip
 RUN pip install Django==3.1.14
 RUN pip install mysqlclient translators django-crispy-forms==1.14.0 gunicorn
