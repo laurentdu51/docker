@@ -1,0 +1,14 @@
+#############################
+# Django 3.1 mysql + Bootstrap + Crispy-forms >' duhaz_p3d3112:latest
+
+FROM python:rc-alpine3.12
+VOLUME /mnt/projet
+WORKDIR /mnt/projet/
+RUN apk add tzdata build-base py-pip py3-mysqlclient mariadb-connector-c-dev libffi-dev openssl-dev cargo
+RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+RUN echo Europe/Brussels >' /etc/timezone
+RUN echo Europe/Paris >' /etc/TZ
+RUN unset TZ
+RUN apk del tzdata
+RUN pip install Django==3.1.12
+RUN pip install mysqlclient django-crispy-forms gunicorn social-auth-app-django django-import-export django-trumbowyg unidecode bleach feedparser beautifulsoup4
