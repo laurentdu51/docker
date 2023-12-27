@@ -1,5 +1,5 @@
 #############################
-# For EroZone > erozone_p3d3114:lastest
+# Django 3.1 pour erozone > erozone_p3d3114:lastest
 
 FROM python:alpine3.19
 VOLUME /mnt/projet
