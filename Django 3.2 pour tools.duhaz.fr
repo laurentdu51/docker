@@ -1,5 +1,5 @@
 #############################
-# Django 3.2 Pour Tools.duhaz.fr> tools_duhaz_p3d32x:latest
+# Django 3.2 pour tools.duhaz.fr> tools_duhaz_p3d32x:latest
 
 FROM python:alpine3.19
 VOLUME /mnt/projet
