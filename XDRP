@@ -17,6 +17,7 @@ services:
       - /share/Container/Xrdp:/home
       - /share/Music:/home/user/Music
       - /share/Documents/Images:/home/user/Pictures/
+      - /share/Documents/Téléchargements:/home/user/Downloads/
       - /share/Documents/Documents administratifs:/home/user/Documents/Documents administratifs
       - /var/run/docker.sock:/var/run/docker.sock
     devices:
