@@ -1,7 +1,7 @@
 #############################
 # Django 3.2 pour feeds.duhaz.fr > feeds_duhaz_p3d32x:latest
 
-FROM python:alpine3.19
+FROM python:alpine3.20
 VOLUME /mnt/projet
 WORKDIR /mnt/projet/
 RUN apk add tzdata build-base py-pip py3-mysqlclient mariadb-connector-c-dev libffi-dev openssl-dev cargo
