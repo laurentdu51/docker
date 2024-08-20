@@ -1,0 +1,9 @@
+#############################
+# Mail server > duhaz_srv_mail:latest
+
+FROM alpine:3.15
+VOLUME /var/spool/mail
+WORKDIR /var/spool/mail
+
+RUN apk add dovecot postfix perl python2
+
