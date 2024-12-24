@@ -1,5 +1,5 @@
 #############################
-# Django 4.2.17 pour erozone > erozone_p3d4214:lastest
+# Django 4.2.17 pour Defitcoquin v2 > defitcoquin_p3d4214:lastest
 
 FROM python:alpine3.21
 VOLUME /mnt/projet
