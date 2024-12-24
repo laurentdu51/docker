@@ -12,4 +12,4 @@ RUN unset TZ
 RUN apk del tzdata
 RUN pip install --upgrade pip
 RUN pip install Django==4.2.17
-RUN pip install mysqlclient translators django-crispy-forms gunicorn
+RUN pip install pytz mysqlclient translators django-crispy-forms gunicorn
