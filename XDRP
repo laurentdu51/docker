@@ -1,27 +1,24 @@
-version: '3.9'
 services:
   xubuntu:
     image: 'docker.io/hectorm/xubuntu:latest'
-    security_opt:
-      - seccomp:unconfined
-    environment:
-      - SERVICE_XORG_HEADLESS_ENABLED=true
-      - UNPRIVILEGED_USER_PASSWORD=v8XZUUHL2t
-      - UNPRIVILEGED_USER_GROUPS=sudo
-      - LANG=fr_FR.UTF-8
-      - LC_ALL=fr_FR.UTF-8
     shm_size: '2gb'
-    ports:
-      - '3389:3389/tcp'
+
+    devices:
+      - '/dev/dri:/dev/dri'
+    environment:
+      - UNPRIVILEGED_USER_PASSWORD=mdpmdp
+      - UNPRIVILEGED_USER_GROUPS=sudo
     volumes:
       - /share/Container/Xrdp:/home
       - /share/Music:/home/user/Music
-      - /share/Documents/Images:/home/user/Pictures/
-      - /share/Documents/Téléchargements:/home/user/Downloads/
+      - /share/Vidéo:/home/user/Video
+      - /share/Documents/Images:/home/user/Pictures
+      - /share/Documents/Téléchargements:/home/user/Downloads
       - /share/Documents/Documents administratifs:/home/user/Documents/Documents administratifs
       - /var/run/docker.sock:/var/run/docker.sock
-    devices:
-      - '/dev/dri:/dev/dri'
+    networks:
+      - duhaz_network
 
 networks:
   duhaz_network:
+    external: true
