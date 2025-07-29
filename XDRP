@@ -8,6 +8,8 @@ services:
     environment:
       - UNPRIVILEGED_USER_PASSWORD=mdpmdp
       - UNPRIVILEGED_USER_GROUPS=sudo
+    ports:
+      - '3728:3728/tcp'
     volumes:
       - /share/Container/Xrdp:/home
       - /share/Music:/home/user/Music
