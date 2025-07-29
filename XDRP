@@ -13,7 +13,7 @@ services:
     volumes:
       - /share/Container/Xrdp:/home
       - /share/Music:/home/user/Music
-      - /share/Vidéo:/home/user/Video
+      - /share/Vidéos:/home/user/Videos
       - /share/Documents/Images:/home/user/Pictures
       - /share/Documents/Téléchargements:/home/user/Downloads
       - /share/Documents/Documents administratifs:/home/user/Documents/Documents administratifs
