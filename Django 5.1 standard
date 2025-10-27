@@ -1,0 +1,17 @@
+#############################
+# Django 5.1 standard > duhaz_p3d51x:latest
+
+FROM python:alpine3.22
+VOLUME /mnt/projet
+WORKDIR /mnt/projet/
+RUN sed -i 's/https/http/' /etc/apk/repositories
+RUN apk add tzdata build-base py-pip libffi-dev openssl-dev cargo git
+RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+RUN echo Europe/Brussels > /etc/timezone
+RUN echo Europe/Paris > /etc/TZ
+RUN unset TZ
+RUN apk del tzdata
+RUN pip install --upgrade pip
+RUN pip install Django==5.1.13
+RUN pip install django-crispy-forms gunicorn django-import-export django-trumbowyg
+CMD '/bin/sh'
