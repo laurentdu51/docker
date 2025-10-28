@@ -13,5 +13,5 @@ RUN unset TZ
 RUN apk del tzdata
 RUN pip install --upgrade pip
 RUN pip install Django==5.1.13
-RUN pip install django-crispy-forms gunicorn django-import-export python-dotenv django-tinymce
+RUN pip install django-crispy-forms gunicorn django-import-export python-dotenv django-tinymce tzdata
 CMD '/bin/sh'
