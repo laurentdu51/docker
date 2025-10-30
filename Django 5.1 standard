@@ -1,7 +1,7 @@
 #############################
 # Django 5.1 standard > duhaz_p3d51x:latest
 
-FROM python:alpine3.22
+FROM python:3.13.9-alpine3.22
 VOLUME /mnt/projet
 WORKDIR /mnt/projet/
 RUN sed -i 's/https/http/' /etc/apk/repositories
