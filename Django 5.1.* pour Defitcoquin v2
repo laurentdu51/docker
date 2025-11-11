@@ -1,7 +1,7 @@
 #############################
-# Django 5.1 pour defitcoquin v2> defitcoquin_p3d5104:lastest
+# Django 5.1 pour defitcoquin v2> defitcoquin_p3d51x:lastest
 
-FROM python:alpine3.21
+FROM python:3.13.9-alpine3.22
 VOLUME /mnt/projet
 WORKDIR /mnt/projet/
 RUN apk add tzdata build-base py-pip py3-mysqlclient mariadb-connector-c-dev g++ freetype-dev jpeg-dev gettext bash zlib-dev libxslt-dev libffi-dev
@@ -11,5 +11,6 @@ RUN echo Europe/Paris > /etc/TZ
 RUN unset TZ
 RUN apk del tzdata
 RUN pip install --upgrade pip
-RUN pip install Django==5.1.4
-RUN pip install pytz tzdata mysqlclient translators django-crispy-forms crispy-bootstrap4 gunicorn
+RUN pip install Django==5.1.13
+
+RUN pip install django-crispy-forms gunicorn python-dotenv translators tzdata crispy-bootstrap4 mysqlclient
