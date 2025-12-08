@@ -1,7 +1,7 @@
 #############################
 # Django 3.2 pour tools.duhaz.fr> tools_duhaz_p3d32x:latest
 
-FROM python:alpine3.20
+FROM python:3.12-alpine
 VOLUME /mnt/projet
 WORKDIR /mnt/projet/
 RUN sed -i 's/https/http/' /etc/apk/repositories
