@@ -13,5 +13,5 @@ RUN unset TZ
 RUN apk del tzdata
 RUN pip install --upgrade pip
 RUN pip install Django==3.2.23
-RUN pip install django-crispy-forms==1.12.0 gunicorn django-import-export==3.3.8 Pillow urllib3 requests bs4 tzdata django-trumbowyg
+RUN pip install mysqlclient django-crispy-forms==1.12.0 gunicorn django-import-export==3.3.8 Pillow urllib3 requests bs4 tzdata django-trumbowyg
 CMD '/bin/sh' 'guinicon_docker_start.bash'
